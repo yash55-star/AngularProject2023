@@ -8,12 +8,11 @@ export class RecipeService {
 
 recipeSelected  = new EventEmitter<Recipe>();
     private recipes: Recipe[] = [
-        new Recipe('A Test Recipe', 'This is simply a test', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'
+        new Recipe('1','A Test Recipe', 'This is simply a test', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'
         ,[
-
             new Ingredient('t1',100)
         ]),
-        new Recipe('Another Test Recipe', 'This is simply a test', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'
+        new Recipe('2','Another Test Recipe', 'This is simply a test', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'
         ,[
             new Ingredient('t2',900)
         ])
@@ -24,6 +23,11 @@ recipeSelected  = new EventEmitter<Recipe>();
     {
         return this.recipes.slice();
     }
+
+    getRecipe(index: number) {
+        
+        return this.recipes[index];
+      }
 
     constructor(private shoppingService : ShoppingListService)
     {
